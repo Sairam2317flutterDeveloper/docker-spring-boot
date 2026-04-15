@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: springboot-app
+        app: springboot-app2
     spec:
       containers:
-      - name: my-springboot-app
+      - name: my-springboot-app2
         image: 211223789150.dkr.ecr.us-east-1.amazonaws.com/coachak/springboot-app
         imagePullPolicy: Always
         ports:
@@ -26,13 +26,13 @@ metadata:
   labels:
     app: springboot-app
     k8s-app: springboot-app
-  name: springboot-app
+  name: springboot-app2
 spec:
   ports:
   - name: http
-    port: 80
+    port: 8089
     protocol: TCP
     targetPort: 8080
   type: LoadBalancer
   selector:
-    app: springboot-app
+    app: springboot-app2
